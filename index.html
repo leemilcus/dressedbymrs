@@ -1,1 +1,810 @@
-< i am Ayla
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Dressed By Mrs | Black · Gold · White — Official Store</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFFFFF;  /* White base */
+            font-family: 'Inter', sans-serif;
+            color: #000000;  /* Black text */
+            line-height: 1.4;
+        }
+
+        h1, h2, h3, .logo-text, .tagline-emphasis {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Brand Colors: Black, Gold (#D4AF37), White */
+        :root {
+            --black: #000000;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --gold-dark: #B8960F;
+            --gray-light: #F5F5F5;
+        }
+
+        /* Header / Navigation - Black & Gold Accent */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--gold);
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Logo Container - supports both image and text fallback */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--black);
+            letter-spacing: -0.02em;
+        }
+        .logo-text span {
+            color: var(--gold);
+        }
+        /* Upload logo button small */
+        .logo-upload-btn {
+            background: none;
+            border: 1px dashed var(--gold);
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--black);
+            transition: all 0.2s;
+        }
+        .logo-upload-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--black);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--black);
+            transition: color 0.2s;
+            letter-spacing: 0.3px;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.6rem;
+            color: var(--black);
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn {
+            display: inline-block;
+            background: transparent;
+            border: 1.5px solid var(--black);
+            padding: 10px 28px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--black);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+            border: 1.5px solid var(--black);
+        }
+        .btn-primary:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--black);
+        }
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+        }
+        .btn-gold:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section - Black & Gold */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+            padding: 40px 0 60px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FEF9E6 100%);
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gold);
+            margin: 20px 0;
+            border-left: 3px solid var(--gold);
+            padding-left: 20px;
+        }
+        .hero-image {
+            flex: 1;
+            height: 380px;
+            background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format') center/cover;
+            border-radius: 32px;
+            border: 2px solid var(--gold);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0 20px;
+            gap: 16px;
+        }
+        .filter-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: var(--gray-light);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            color: var(--black);
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--black);
+            color: var(--gold);
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 32px;
+            margin: 40px 0;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            cursor: pointer;
+            border: 1px solid #EAEAEA;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.2);
+            border-color: var(--gold);
+        }
+        .product-img {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            background-color: #F5F5F5;
+        }
+        .product-info {
+            padding: 18px;
+        }
+        .product-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--black);
+        }
+        .product-category {
+            font-size: 0.75rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin: 6px 0;
+            font-weight: 600;
+        }
+        .product-price {
+            font-weight: 700;
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: var(--black);
+        }
+        .add-to-cart {
+            width: 100%;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 10px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .add-to-cart:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* Side Cart */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        .cart-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 420px;
+            max-width: 90vw;
+            height: 100%;
+            background: var(--white);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            border-left: 3px solid var(--gold);
+        }
+        .cart-overlay.open .cart-sidebar {
+            transform: translateX(0);
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        .cart-header h3 {
+            color: var(--black);
+        }
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+        }
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #EAEAEA;
+            padding-bottom: 12px;
+        }
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            background-size: cover;
+            border-radius: 12px;
+        }
+        .cart-item-details {
+            flex: 1;
+        }
+        .cart-item-title {
+            font-weight: 600;
+        }
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--gold-dark);
+        }
+        .cart-item-remove {
+            color: #999;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .cart-total {
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin: 20px 0;
+            text-align: right;
+            border-top: 2px solid var(--gold);
+            padding-top: 16px;
+            color: var(--black);
+        }
+        .checkout-btn {
+            background: var(--black);
+            color: var(--white);
+            width: 100%;
+            padding: 14px;
+            border: none;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .checkout-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        footer {
+            background: var(--black);
+            color: var(--gold);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            border-top: 2px solid var(--gold);
+        }
+
+        /* Logo upload modal simple */
+        .logo-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.2s;
+        }
+        .logo-modal.open {
+            visibility: visible;
+            opacity: 1;
+        }
+        .logo-modal-content {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 28px;
+            text-align: center;
+            max-width: 400px;
+            border: 2px solid var(--gold);
+        }
+        .logo-preview {
+            max-width: 200px;
+            max-height: 100px;
+            margin: 20px auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .filter-bar { flex-direction: column; align-items: flex-start; }
+            .logo-container { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo-container" id="logoContainer">
+                <!-- Logo image will be injected here dynamically (if uploaded) -->
+                <div id="logoDisplayArea">
+                    <div class="logo-text">Dressed By <span>Mrs</span></div>
+                </div>
+                <button class="logo-upload-btn" id="uploadLogoBtn"><i class="fas fa-upload"></i> Upload Logo</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active" data-filter="all">Shop</a></li>
+                <li><a href="#" data-filter="men">Men</a></li>
+                <li><a href="#" data-filter="women">Women</a></li>
+                <li><a href="#" data-filter="shoes">Shoes</a></li>
+                <li><a href="#" data-filter="formal">Formal</a></li>
+            </ul>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Formal & semi-formal wear<br>for <span>men & women</span></h1>
+                <p>Shoes | Smart looks | Confident living — refined style for every occasion.</p>
+                <div class="tagline">“Cause she’s always right”</div>
+                <button class="btn btn-primary" id="shopNowBtn">Shop New Collection →</button>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="men">Men</button>
+                <button class="filter-btn" data-filter="women">Women</button>
+                <button class="filter-btn" data-filter="shoes">Shoes</button>
+                <button class="filter-btn" data-filter="formal">Formal</button>
+                <button class="filter-btn" data-filter="semi-formal">Semi-Formal</button>
+            </div>
+            <div><i class="fas fa-gem" style="color: var(--gold);"></i> Free shipping on orders $150+</div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="productsGrid"></div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p style="color: var(--gold); font-weight: 500;">© 2025 Dressed By Mrs — Black, Gold & White Edition</p>
+        <p style="margin-top: 12px; font-size: 0.8rem; color: #D4AF37;">“Cause she’s always right” — Timeless elegance, refined confidence.</p>
+    </div>
+</footer>
+
+<!-- Shopping Cart Sidebar -->
+<div id="cartOverlay" class="cart-overlay">
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Bag <i class="fas fa-crown" style="color: var(--gold);"></i></h3>
+            <i class="fas fa-times" id="closeCart" style="cursor:pointer; font-size:1.4rem;"></i>
+        </div>
+        <div id="cartItemsList" class="cart-items">
+            <p style="text-align:center; color:#aaa;">Your cart is empty</p>
+        </div>
+        <div class="cart-total" id="cartTotal">$0.00</div>
+        <button class="checkout-btn" id="checkoutBtn">Secure Checkout</button>
+        <p style="font-size: 0.7rem; text-align: center; margin-top: 12px;">Black, Gold & White — Always in style.</p>
+    </div>
+</div>
+
+<!-- Logo Upload Modal -->
+<div id="logoModal" class="logo-modal">
+    <div class="logo-modal-content">
+        <h3 style="color: var(--gold);">Upload Your Logo</h3>
+        <p style="margin: 12px 0;">Black, gold & white brand identity</p>
+        <input type="file" id="logoFileInput" accept="image/png,image/jpeg,image/jpg,image/svg+xml" style="margin: 16px 0;">
+        <img id="logoPreviewImg" class="logo-preview" style="display: none;" alt="Logo preview">
+        <div>
+            <button id="confirmLogoBtn" class="btn btn-primary" style="margin-right: 10px;">Apply Logo</button>
+            <button id="cancelLogoBtn" class="btn btn-outline">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ---------- PRODUCT DATABASE (Black/Gold Aesthetic) ----------
+    const products = [
+        { id: 1, name: "Windsor Wool Blazer", category: "men", type: "formal", price: 289, image: "https://images.unsplash.com/photo-1594938374182-a54f1189a47c?w=500&auto=format", gender: "men" },
+        { id: 2, name: "Linen Tailored Dress", category: "women", type: "semi-formal", price: 215, image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&auto=format", gender: "women" },
+        { id: 3, name: "Cap-Toe Oxford Shoes", category: "shoes", type: "formal", price: 179, image: "https://images.unsplash.com/photo-1617137968427-85924c800c6a?w=500&auto=format", gender: "unisex" },
+        { id: 4, name: "Slim-Fit Charcoal Suit", category: "men", type: "formal", price: 449, image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=500&auto=format", gender: "men" },
+        { id: 5, name: "Silk Crepe Blouse", category: "women", type: "semi-formal", price: 129, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format", gender: "women" },
+        { id: 6, name: "Monk Strap Loafers", category: "shoes", type: "semi-formal", price: 199, image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&auto=format", gender: "unisex" },
+        { id: 7, name: "Double-Breasted Blazer", category: "women", type: "formal", price: 279, image: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=500&auto=format", gender: "women" },
+        { id: 8, name: "Pleated Trousers", category: "men", type: "semi-formal", price: 139, image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format", gender: "men" },
+        { id: 9, name: "Stiletto Heels - Gold Accent", category: "shoes", type: "formal", price: 159, image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&auto=format", gender: "women" },
+        { id: 10, name: "Linen Cotton Shirt", category: "men", type: "semi-formal", price: 89, image: "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500&auto=format", gender: "men" },
+        { id: 11, name: "Tweed Midi Dress", category: "women", type: "formal", price: 249, image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&auto=format", gender: "women" },
+        { id: 12, name: "Leather Chelsea Boots", category: "shoes", type: "semi-formal", price: 219, image: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=500&auto=format", gender: "unisex" }
+    ];
+
+    let cart = [];
+    let currentFilter = "all";
+    let uploadedLogoData = null; // store base64
+
+    // DOM
+    const productsGrid = document.getElementById("productsGrid");
+    const cartCountSpan = document.getElementById("cartCount");
+    const cartItemsList = document.getElementById("cartItemsList");
+    const cartTotalSpan = document.getElementById("cartTotal");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const cartIcon = document.getElementById("cartIcon");
+    const closeCartBtn = document.getElementById("closeCart");
+    const logoDisplayArea = document.getElementById("logoDisplayArea");
+    const uploadLogoBtn = document.getElementById("uploadLogoBtn");
+    const logoModal = document.getElementById("logoModal");
+    const logoFileInput = document.getElementById("logoFileInput");
+    const logoPreviewImg = document.getElementById("logoPreviewImg");
+    const confirmLogoBtn = document.getElementById("confirmLogoBtn");
+    const cancelLogoBtn = document.getElementById("cancelLogoBtn");
+
+    // Load saved logo from localStorage
+    function loadSavedLogo() {
+        const savedLogo = localStorage.getItem("dressedByMrsLogo");
+        if (savedLogo) {
+            uploadedLogoData = savedLogo;
+            logoDisplayArea.innerHTML = `<img src="${savedLogo}" class="logo-img" alt="Brand Logo" style="height: 50px; width: auto;">`;
+        } else {
+            logoDisplayArea.innerHTML = `<div class="logo-text">Dressed By <span>Mrs</span></div>`;
+        }
+    }
+
+    function saveLogoToLocalStorage(base64) {
+        localStorage.setItem("dressedByMrsLogo", base64);
+    }
+
+    // Cart functions
+    function saveCart() {
+        localStorage.setItem("dressedByMrsCart", JSON.stringify(cart));
+        updateCartUI();
+    }
+
+    function loadCart() {
+        const saved = localStorage.getItem("dressedByMrsCart");
+        if (saved) {
+            try {
+                cart = JSON.parse(saved);
+            } catch(e) { cart = []; }
+        } else {
+            cart = [];
+        }
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCountSpan.innerText = totalItems;
+        if (cartItemsList) {
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = '<p style="text-align:center; color:#aaa;">Your cart is empty</p>';
+                cartTotalSpan.innerText = "$0.00";
+                return;
+            }
+            let html = '';
+            let total = 0;
+            cart.forEach((item, idx) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                html += `
+                    <div class="cart-item">
+                        <div class="cart-item-img" style="background-image: url('${item.image}'); background-size: cover;"></div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">$${item.price.toFixed(2)} x ${item.quantity}</div>
+                            <div class="cart-item-remove" data-id="${item.id}">Remove</div>
+                        </div>
+                        <div><strong>$${itemTotal.toFixed(2)}</strong></div>
+                    </div>
+                `;
+            });
+            cartItemsList.innerHTML = html;
+            cartTotalSpan.innerText = `$${total.toFixed(2)}`;
+            document.querySelectorAll('.cart-item-remove').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    const id = parseInt(el.getAttribute('data-id'));
+                    removeFromCart(id);
+                });
+            });
+        }
+    }
+
+    function addToCart(productId) {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+        const existing = cart.find(item => item.id === productId);
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            });
+        }
+        saveCart();
+        cartOverlay.classList.add("open");
+    }
+
+    function removeFromCart(productId) {
+        const index = cart.findIndex(item => item.id === productId);
+        if (index !== -1) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+            } else {
+                cart.splice(index, 1);
+            }
+            saveCart();
+        }
+    }
+
+    function renderProducts(filter = "all") {
+        let filtered = [...products];
+        if (filter === "men") filtered = products.filter(p => p.gender === "men");
+        else if (filter === "women") filtered = products.filter(p => p.gender === "women");
+        else if (filter === "shoes") filtered = products.filter(p => p.category === "shoes");
+        else if (filter === "formal") filtered = products.filter(p => p.type === "formal");
+        else if (filter === "semi-formal") filtered = products.filter(p => p.type === "semi-formal");
+        
+        if (productsGrid) {
+            productsGrid.innerHTML = filtered.map(product => `
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('${product.image}');"></div>
+                    <div class="product-info">
+                        <div class="product-title">${product.name}</div>
+                        <div class="product-category">${product.category === 'shoes' ? 'Shoes' : (product.type === 'formal' ? 'Formal' : 'Semi-Formal')} • ${product.gender === 'men' ? 'Men' : product.gender === 'women' ? 'Women' : 'Unisex'}</div>
+                        <div class="product-price">$${product.price.toFixed(2)}</div>
+                        <button class="add-to-cart" data-id="${product.id}">Add to Bag</button>
+                    </div>
+                </div>
+            `).join('');
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = parseInt(btn.getAttribute('data-id'));
+                    addToCart(id);
+                });
+            });
+        }
+    }
+
+    // Filter events
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const filterValue = btn.getAttribute('data-filter');
+            currentFilter = filterValue;
+            renderProducts(currentFilter);
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            const matchingLink = Array.from(document.querySelectorAll('.nav-links a')).find(a => a.getAttribute('data-filter') === filterValue);
+            if(matchingLink) matchingLink.classList.add('active');
+            else if(filterValue === 'all') document.querySelector('.nav-links a[data-filter="all"]')?.classList.add('active');
+        });
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const filterVal = link.getAttribute('data-filter');
+            if(filterVal) {
+                currentFilter = filterVal;
+                renderProducts(currentFilter);
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                const targetBtn = document.querySelector(`.filter-btn[data-filter="${filterVal}"]`);
+                if(targetBtn) targetBtn.classList.add('active');
+                document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+                link.classList.add('active');
+            }
+        });
+    });
+
+    cartIcon.addEventListener('click', () => cartOverlay.classList.add('open'));
+    closeCartBtn.addEventListener('click', () => cartOverlay.classList.remove('open'));
+    cartOverlay.addEventListener('click', (e) => { if(e.target === cartOverlay) cartOverlay.classList.remove('open'); });
+    document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+        if(cart.length === 0) { alert("Your cart is empty. Add some refined pieces!"); return; }
+        alert(`Thank you for shopping at Dressed By Mrs!\nTotal: $${cart.reduce((sum, i) => sum + (i.price * i.quantity), 0).toFixed(2)}\n\n“Cause she’s always right” — Your order is confirmed.`);
+        cart = [];
+        saveCart();
+        cartOverlay.classList.remove('open');
+        updateCartUI();
+        renderProducts(currentFilter);
+    });
+    document.getElementById('shopNowBtn')?.addEventListener('click', () => document.getElementById('productsGrid')?.scrollIntoView({ behavior: 'smooth' }));
+
+    // Logo upload logic
+    uploadLogoBtn.addEventListener('click', () => {
+        logoModal.classList.add('open');
+        logoFileInput.value = '';
+        logoPreviewImg.style.display = 'none';
+    });
+    logoFileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if(file) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                logoPreviewImg.src = ev.target.result;
+                logoPreviewImg.style.display = 'block';
+                logoPreviewImg.style.maxWidth = '200px';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+    confirmLogoBtn.addEventListener('click', () => {
+        if(logoPreviewImg.src && logoPreviewImg.style.display === 'block') {
+            const logoBase64 = logoPreviewImg.src;
+            uploadedLogoData = logoBase64;
+            logoDisplayArea.innerHTML = `<img src="${logoBase64}" class="logo-img" alt="Brand Logo" style="height: 50px; width: auto;">`;
+            saveLogoToLocalStorage(logoBase64);
+        } else {
+            alert("Please select an image file first.");
+        }
+        logoModal.classList.remove('open');
+    });
+    cancelLogoBtn.addEventListener('click', () => logoModal.classList.remove('open'));
+
+    // init
+    loadSavedLogo();
+    loadCart();
+    renderProducts("all");
+    document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+    document.querySelector('.nav-links a[data-filter="all"]').classList.add('active');
+</script>
+</body>
+</html>
